@@ -1,5 +1,5 @@
 # Spotty
-Spotify web player using latest technologies, including React, Node, Express, and Spotify playback SDK \
+Spotify web player using latest technologies, including React, Node, Express, and Spotify playback SDK
 
 # Getting Started with Create React App
 
