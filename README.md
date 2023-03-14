@@ -1,6 +1,8 @@
 # React-Spotty
-Spotify web player using latest technologies, including React, Node, Express, and Spotify playback SDK
-**Note: requires Spotify premium account to run**
+Spotify web player using latest technologies, including React, Node, Express, and Spotify playback SDK<br>
+```diff
++! Note: requires Spotify premium account to run` !+
+```
 
 # Getting Started with Create React App
 
