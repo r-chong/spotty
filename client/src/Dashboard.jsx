@@ -25,9 +25,11 @@ export default function Dashboard({ code }) {
     setLyrics("");
   }
 
+  // censorship options
   const badwords = ["fuck", "shit", "sex", "nigga", "bitch"];
+  const myCensorOptions = { censorText: "▇" };
   const myCensor = new GoodCensor(badwords);
-  const censorEnabled = false;
+  const censorEnabled = true;
 
   useEffect(() => {
     if (!playingTrack) return;
@@ -102,7 +104,7 @@ export default function Dashboard({ code }) {
         {/* if no search results then show lyrics*/}
         {searchResults.length === 0 && (
           <div className="text-center" style={{ whiteSpace: "pre" }}>
-            {censorEnabled ? myCensor.censor(lyrics) : lyrics}
+            {censorEnabled ? myCensor.censor(lyrics, myCensorOptions) : lyrics}
           </div>
         )}
       </div>
