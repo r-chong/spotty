@@ -17,6 +17,7 @@ export default function Dashboard({ code }) {
   const [playingTrack, setPlayingTrack] = useState();
   const [lyrics, setLyrics] = useState("");
 
+  // clear search and choose track
   function chooseTrack(track) {
     setPlayingTrack(track);
     setSearch("");
@@ -47,6 +48,8 @@ export default function Dashboard({ code }) {
     if (!search) return setSearchResults([]);
     if (!accessToken) return;
 
+    // make request, if new request made, then stop
+    // to prevent lots of requests when typing
     let cancel = false;
     spotifyApi.searchTracks(search).then((res) => {
       if (cancel) return;
@@ -75,12 +78,14 @@ export default function Dashboard({ code }) {
 
   return (
     <Container className="d-flex flex-column py-2" style={{ height: "100vh" }}>
+      {/* Search box */}
       <Form.Control
         type="search"
         placeholder="Search Songs/Artists"
         value={search}
         onChange={(e) => setSearch(e.target.value)}
       />
+      {/* Part where the songs appear under search */}
       <div className="flex-grow-1 my-2" style={{ overflowY: "auto" }}>
         {searchResults.map((track) => (
           <TrackSearchResult
@@ -89,6 +94,7 @@ export default function Dashboard({ code }) {
             chooseTrack={chooseTrack}
           />
         ))}
+        {/* if no search results then show lyrics*/}
         {searchResults.length === 0 && (
           <div className="text-center" style={{ whiteSpace: "pre" }}>
             {lyrics}

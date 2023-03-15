@@ -14,6 +14,8 @@ export default function Player({ accessToken, trackUri }) {
       callback={(state) => {
         if (!state.isPlaying) setPlay(false);
       }}
+      // if not playing, setPlay to false
+      // (every time song changes)
       play={play}
       uris={trackUri ? [trackUri] : []}
     />
