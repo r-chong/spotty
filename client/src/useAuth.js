@@ -18,13 +18,13 @@ export default function useAuth(code) {
         window.history.pushState({}, null, "/")
       })
       .catch(() => {
+        // deprecated - app should no longer redirect
         // window.location = "/"
       })
   }, [code])
 
   useEffect(() => {
     if (!refreshToken || !expiresIn) return
-    console.log("if statement runs")
     const interval = setInterval(() => {
       console.log("setInterval is running")
       axios
