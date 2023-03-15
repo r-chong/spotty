@@ -35,7 +35,7 @@ export default function Dashboard({ code }) {
         },
       })
       .then((res) => {
-        setLyrics(res.data.lyrics);
+        setLyrics(res.data.censored);
       });
   }, [playingTrack]);
 
