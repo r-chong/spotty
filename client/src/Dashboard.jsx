@@ -5,6 +5,7 @@ import TrackSearchResult from "./TrackSearchResult";
 import { Container, Form } from "react-bootstrap";
 import SpotifyWebApi from "spotify-web-api-node";
 import axios from "axios";
+const GoodCensor = require("good-censor");
 
 const spotifyApi = new SpotifyWebApi({
   clientId: "75b8ee5250fc4c15b07c36fe24f9b35e",
@@ -24,6 +25,10 @@ export default function Dashboard({ code }) {
     setLyrics("");
   }
 
+  const badwords = ["fuck", "shit", "sex", "nigga", "bitch"];
+  const myCensor = new GoodCensor(badwords);
+  const censorEnabled = false;
+
   useEffect(() => {
     if (!playingTrack) return;
 
@@ -35,7 +40,7 @@ export default function Dashboard({ code }) {
         },
       })
       .then((res) => {
-        setLyrics(res.data.censored);
+        setLyrics(res.data.lyrics);
       });
   }, [playingTrack]);
 
@@ -97,7 +102,7 @@ export default function Dashboard({ code }) {
         {/* if no search results then show lyrics*/}
         {searchResults.length === 0 && (
           <div className="text-center" style={{ whiteSpace: "pre" }}>
-            {lyrics}
+            {censorEnabled ? myCensor.censor(lyrics) : lyrics}
           </div>
         )}
       </div>
