@@ -5,6 +5,7 @@ import Player from "./Player";
 import TrackSearchResult from "./TrackSearchResult";
 import SpotifyWebApi from "spotify-web-api-node";
 import axios from "axios";
+import "./index.css";
 
 const GoodCensor = require("good-censor");
 const badwordsArray = require("badwords/array");
@@ -31,7 +32,7 @@ export default function Dashboard({ code }) {
   // censorship options, for if user requests to not see profanity
   const myCensorOptions = { censorText: "▇" };
   const myCensor = new GoodCensor(badwordsArray);
-  const censorEnabled = true;
+  const censorEnabled = false;
 
   useEffect(() => {
     if (!playingTrack) return;
@@ -86,7 +87,7 @@ export default function Dashboard({ code }) {
   }, [search, accessToken]);
 
   return (
-    <Container className="d-flex flex-column py-2" style={{ height: "100vh" }}>
+    <Container className="flex flex-col py-2" style={{ height: "100vh" }}>
       {/* Search box */}
       <Form.Control
         type="search"
@@ -95,7 +96,10 @@ export default function Dashboard({ code }) {
         onChange={(e) => setSearch(e.target.value)}
       />
       {/* Part where the songs appear under search */}
-      <div className="flex-grow-1 my-2" style={{ overflowY: "auto" }}>
+      <div
+        className="flex flex-col py-2"
+        style={{ overflowY: "auto", flexGrow: 1 }}
+      >
         {searchResults.map((track) => (
           <TrackSearchResult
             track={track}
