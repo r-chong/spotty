@@ -15,7 +15,7 @@ const spotifyApi = new SpotifyWebApi({
   clientId: "75b8ee5250fc4c15b07c36fe24f9b35e",
 });
 
-export default function Dashboard({ code }) {
+export default function Dashboard({ code, theme }) {
   const accessToken = useAuth(code);
   const [search, setSearch] = useState("");
   const [searchResults, setSearchResults] = useState([]);
@@ -116,7 +116,11 @@ export default function Dashboard({ code }) {
         )}
       </div>
       <div>
-        <Player accessToken={accessToken} trackUri={playingTrack?.uri} />
+        <Player
+          accessToken={accessToken}
+          trackUri={playingTrack?.uri}
+          theme={theme}
+        />
       </div>
     </Container>
   );

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "./components/index.css";
 import Login from "./components/Login";
 import ThemeChanger from "./components/ThemeChanger";
 import Dashboard from "./components/Dashboard";
@@ -10,7 +11,7 @@ function App() {
   const [theme, setTheme] = useState("light");
 
   const handleThemeChange = (newTheme) => {
-    if (theme == newTheme) {
+    if (theme === newTheme) {
       console.log("theme is already " + newTheme);
     } else {
       console.log("theme changed to " + newTheme);
@@ -19,9 +20,9 @@ function App() {
   };
 
   return code ? (
-    <div>
-      <Dashboard code={code} setTheme={handleThemeChange} />
-      <ThemeChanger setTheme={handleThemeChange} />
+    <div className="">
+      <Dashboard code={code} theme={theme} />
+      <ThemeChanger theme={theme} setTheme={handleThemeChange} />
     </div>
   ) : (
     <Login />

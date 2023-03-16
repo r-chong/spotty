@@ -2,30 +2,83 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-:root {
-    --primary-color: #007bff;
-    --secondary-color: #6c757d;
-    --success-color: #28a745;
-    --warning-color: #ffc107;
+.light {
+  --primary-color: #FFFFFF;
+  --secondary-color: #f4f4f4;
+    --accent-color: #1DB954;
+    --warning-color: #E74C3C;
+    --text-color: #1C1C1E;
+  }
+
+  .dark {
+    --primary-color: #1C1C1E;
+    --secondary-color: #2C2C2E;
+    --accent-color: #7F39FB;
+    --warning-color: #E74C3C;
+    --text-color: #FFFFFF;
+    --background-gradient: linear-gradient(to right, #4B0082, #7F39FB);
+    /* --spotify-gradient: linear-gradient(90deg, #1DB954, #32CD32, #7CFC00);   */
+  }
+    
+  .city-lights {
+    --primary-color: #1C1C1E;
+    --secondary-color: #2C2C2E;
+    --accent-color: #7F39FB;
+    --warning-color: #E74C3C;
+    --text-color: #FFFFFF;
+    --background-gradient: linear-gradient(to right, #4B0082, #7F39FB);
+    --gradient-1: linear-gradient(to right, #483D8B, #00008B);
+    --gradient-2: linear-gradient(to right, #9932CC, #8B008B);
+    --gradient-3: linear-gradient(to right, #1E90FF, #000080);
+    /* --background-gradient: linear-gradient(to right, #FFA500, #FF8C00);
+    --background-gradient: linear-gradient(to right, #FF5733, #C70039);
+    --background-gradient: linear-gradient(to right, #FF69B4, #FF1493);   */
   }
   
-  .dark-theme {
-    --primary-color: #9b4dca;
-    --secondary-color: #6c757d;
-    --success-color: #20c997;
-    --warning-color: #ffc107;
+  .spotify-green {
+    --primary-color: #1DB954;
+    --secondary-color: #282828;
+    --accent-color: #1ED760;
+    --warning-color: #FF4242;
+    --text-color: #FFFFFF;
+    --background-color: #121212;
   }
+
+  /* .web3-background {
+    background: 
+      linear-gradient(141.88deg, #06090F 0%, #0C0F16 50%, #14171D 100%),
+      linear-gradient(147.06deg, #0D111A 0%, #1A1E28 50%, #14171D 100%),
+      linear-gradient(124.16deg, #131B28 0%, #14171D 100%);
+  } */
+
+/* supposedly orange */
+  /* .web3-background {
+    background: 
+      linear-gradient(141.88deg, #06090F 0%, #0C0F16 50%, #14171D 100%),
+      linear-gradient(147.06deg, #0D111A 0%, #1A1E28 50%, #14171D 100%),
+      linear-gradient(124.16deg, #131B28 0%, #14171D 100%),
+      linear-gradient(135deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.05) 40%, rgba(255, 221, 153, 0.1) 100%),
+      linear-gradient(45deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 128, 0, 0.15) 100%),
+      linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 128, 0, 0.15) 100%);
+  } */
   
-  .cool-theme {
-    --primary-color: #18a2b8;
-    --secondary-color: #6c757d;
-    --success-color: #28a745;
-    --warning-color: #ffc107;
-  }
+.web3-background {
+  background: 
+    linear-gradient(141.88deg, #06090F 0%, #0C0F16 50%, #14171D 100%),
+    linear-gradient(147.06deg, #0D111A 0%, #1A1E28 50%, #14171D 100%),
+    linear-gradient(124.16deg, #131B28 0%, #14171D 100%),
+    linear-gradient(30deg, #3B5143 50%, #212F23 50%);
+}
+
+
+/* .dark {
   
-  .warm-theme {
-    --primary-color: #dc3545;
-    --secondary-color: #6c757d;
-    --success-color: #28a745;
-    --warning-color: #ffc107;
-  }
+}
+
+.city_lights {
+
+}
+
+.spotify_green {
+
+} */

@@ -1,14 +1,51 @@
 import { useState, useEffect } from "react";
 import SpotifyPlayer from "react-spotify-web-playback";
 
-export default function Player({ accessToken, trackUri }) {
+export default function Player({ accessToken, trackUri, theme }) {
   const [play, setPlay] = useState(false);
+  const [key, setKey] = useState(0);
+  let bgColor, textColor, iconColor;
 
-  useEffect(() => setPlay(true), [trackUri]);
+  console.log(theme);
+  switch (theme) {
+    case "light":
+      bgColor = "#f3f3f3";
+      textColor = "#111";
+      iconColor = "#1DB954";
+      break;
+    case "dark":
+      bgColor = "#111";
+      textColor = "#f3f3f3";
+      iconColor = "#1DB954";
+      break;
+    case "city_lights":
+      bgColor = "#292d3e";
+      textColor = "#a9b1d6";
+      iconColor = "#5cb85c";
+      break;
+    case "spotify_green":
+      bgColor = "#1DB954";
+      textColor = "#f3f3f3";
+      iconColor = "#f3f3f3";
+      break;
+    default:
+      bgColor = "#f3f3f3";
+      textColor = "#111";
+      iconColor = "#1DB954";
+  }
+
+  useEffect(() => {
+    setKey((key) => key + 1);
+  }, [theme]);
+
+  useEffect(() => {
+    setPlay(true);
+  }, [trackUri]);
 
   if (!accessToken) return null;
   return (
     <SpotifyPlayer
+      key={key}
       token={accessToken}
       showSaveIcon
       hideAttribution
@@ -19,6 +56,13 @@ export default function Player({ accessToken, trackUri }) {
       // (every time song changes)
       play={play}
       uris={trackUri ? [trackUri] : []}
+      styles={{
+        bgColor: bgColor,
+        color: textColor,
+        loaderColor: iconColor,
+        sliderColor: iconColor,
+        savedColor: iconColor,
+      }}
     />
   );
 }
