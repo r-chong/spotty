@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { themes } from "../theme";
 import "./index.css";
 
 export default function ThemeChanger({ setTheme }) {
@@ -10,25 +11,25 @@ export default function ThemeChanger({ setTheme }) {
       <div className="flex justify-center items-center gap-4">
         <button
           className="px-4 py-2 rounded-md bg-white text-gray-800 shadow-md hover:bg-gray-200 focus:outline-none"
-          onClick={() => setTheme("light")}
+          onClick={() => setTheme(themes.light)}
         >
           Default
         </button>
         <button
           className="px-4 py-2 rounded-md bg-gray-800 text-white shadow-md hover:bg-gray-700 focus:outline-none"
-          onClick={() => setTheme("dark")}
+          onClick={() => setTheme(themes.dark)}
         >
           Dark
         </button>
         <button
           className="px-4 py-2 rounded-md bg-gray-700 text-white shadow-md hover:bg-gray-600 focus:outline-none"
-          onClick={() => setTheme("city_lights")}
+          onClick={() => setTheme(themes.city_lights)}
         >
           City Lights
         </button>
         <button
           className="px-4 py-2 rounded-md bg-green-500 text-white shadow-md hover:bg-green-600 focus:outline-none"
-          onClick={() => setTheme("spotify_green")}
+          onClick={() => setTheme(themes.spotify_green)}
         >
           Spotify Green
         </button>

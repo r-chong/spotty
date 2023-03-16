@@ -17,7 +17,6 @@
     --warning-color: #E74C3C;
     --text-color: #FFFFFF;
     --background-gradient: linear-gradient(to right, #4B0082, #7F39FB);
-    /* --spotify-gradient: linear-gradient(90deg, #1DB954, #32CD32, #7CFC00);   */
   }
     
   .city-lights {
@@ -30,10 +29,7 @@
     --gradient-1: linear-gradient(to right, #483D8B, #00008B);
     --gradient-2: linear-gradient(to right, #9932CC, #8B008B);
     --gradient-3: linear-gradient(to right, #1E90FF, #000080);
-    /* --background-gradient: linear-gradient(to right, #FFA500, #FF8C00);
-    --background-gradient: linear-gradient(to right, #FF5733, #C70039);
-    --background-gradient: linear-gradient(to right, #FF69B4, #FF1493);   */
-  }
+    }
   
   .spotify-green {
     --primary-color: #1DB954;
@@ -44,6 +40,25 @@
     --background-color: #121212;
   }
 
+
+  .player {
+    /* Set the background color of the Player component */
+    background-color: #ffffff;
+    /* Set the height of the Player component */
+    height: 80px;
+    /* Add a linear gradient to the left and right edges */
+    background-image: linear-gradient(
+      to left,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(255, 255, 255, 0) 100%
+    ), linear-gradient(
+      to right,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    /* Center the Player component horizontally */
+    margin: 0 auto;
+  }
   /* .web3-background {
     background: 
       linear-gradient(141.88deg, #06090F 0%, #0C0F16 50%, #14171D 100%),

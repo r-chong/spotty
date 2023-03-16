@@ -87,14 +87,16 @@ export default function Dashboard({ code, theme }) {
   }, [search, accessToken]);
 
   return (
-    <Container className="flex flex-col py-2" style={{ height: "100vh" }}>
+    <Container className="flex flex-col w-screen" style={{ height: "100vh" }}>
       {/* Search box */}
-      <Form.Control
-        type="search"
-        placeholder="Search Songs/Artists"
-        value={search}
-        onChange={(e) => setSearch(e.target.value)}
-      />
+      <div className="py-2">
+        <Form.Control
+          type="search"
+          placeholder="Search Songs/Artists"
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+        />
+      </div>
       {/* Part where the songs appear under search */}
       <div
         className="flex flex-col py-2"
@@ -115,7 +117,7 @@ export default function Dashboard({ code, theme }) {
           </div>
         )}
       </div>
-      <div>
+      <div className="w-full player">
         <Player
           accessToken={accessToken}
           trackUri={playingTrack?.uri}
