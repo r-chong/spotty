@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 
-export default function ThemeChanger({ theme, handleThemeChange }) {
+export default function ThemeChanger({ setTheme }) {
+  // const themeOptions = ["light", "dark", "city_lights", "spotify_green"];
+
   return (
     <div>
-      <label htmlFor="theme-select">Select theme:</label>
-      <select id="theme-select" value={theme} onChange={handleThemeChange}>
-        <option value="light">Light</option>
-        <option value="dark">Dark</option>
-        <option value="city_lights">City Lights</option>
-        <option value="green">Green</option>
-      </select>
+      <p>theme changer</p>
+      <button onClick={() => setTheme("light")}>Default</button>
+      <button onClick={() => setTheme("dark")}>Dark</button>
+      <button onClick={() => setTheme("city_lights")}>City Lights</button>
+      <button onClick={() => setTheme("spotify_green")}>Spotify Green</button>
     </div>
   );
 }
