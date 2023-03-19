@@ -11,7 +11,8 @@ export default function ThemeMenu({ handleThemeChange }) {
       {({ open }) => (
         <>
           <Popover.Button className="flex items-center">
-            <span className="mr-2 text-white font-semibold">Change Theme</span>
+            <span className="mr-2 text-white">Change theme</span>
+            {/* <span className="mr-2 text-white font-semibold">Change Theme</span> */}
           </Popover.Button>
 
           <Transition

@@ -6,6 +6,7 @@ import { themes } from "./theme";
 import ThemeChanger from "./components/ThemeChanger";
 import Dashboard from "./components/Dashboard";
 import ThemeMenu from "./components/ThemeMenu";
+import Sidenav from "./components/Sidenav";
 
 const code = new URLSearchParams(window.location.search).get("code");
 
@@ -30,19 +31,7 @@ function App() {
         background: theme.backgroundGradient,
       }}
     >
-      <nav
-        className="fixed top-0 left-0 lg:w-1/5 hidden sm:block h-screen"
-        aria-label="Sidenav"
-      >
-        <div
-          className="overflow-y-auto py-5 px-3 h-full overflow-x-hidden"
-          style={{
-            backgroundColor: theme.warningColor,
-          }}
-        >
-          <ThemeMenu handleThemeChange={handleThemeChange} />
-        </div>
-      </nav>
+      <Sidenav theme={theme} handleThemeChange={handleThemeChange} />
       <main>
         <Dashboard code={code} theme={theme} />
       </main>
