@@ -30,7 +30,7 @@ function App() {
       }}
     >
       <Dashboard code={code} theme={theme} />
-      <ThemeChanger theme={theme} setTheme={handleThemeChange} />
+      <ThemeChanger theme={theme} setTheme={setTheme} />
     </div>
   ) : (
     <Login />

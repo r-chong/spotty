@@ -59,8 +59,11 @@ export default function Player({ accessToken, trackUri, theme }) {
         bgColor: theme.primaryColor,
         color: theme.textColor,
         loaderColor: theme.backgroundGradient,
-        sliderColor: theme.backgroundGradient,
+        sliderColor: theme.accentColor,
         savedColor: theme.backgroundGradient,
+        activeColor: theme.accentColor,
+        trackArtistColor: theme.textColor,
+        trackNameColor: theme.textColor,
       }}
     />
   );
