@@ -57,13 +57,13 @@ export default function Player({ accessToken, trackUri, theme }) {
       uris={trackUri ? [trackUri] : []}
       styles={{
         bgColor: theme.primaryColor,
-        color: theme.textColor,
-        loaderColor: theme.backgroundGradient,
+        color: theme.playButtonColor,
+        loaderColor: theme.accentColor,
         sliderColor: theme.accentColor,
-        savedColor: theme.backgroundGradient,
+        // active is heart icon
         activeColor: theme.accentColor,
-        trackArtistColor: theme.textColor,
         trackNameColor: theme.textColor,
+        trackArtistColor: theme.secondaryColor,
       }}
     />
   );
