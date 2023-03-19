@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Container, Form } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import useAuth from "../useAuth";
 import Player from "./Player";
 import TrackSearchResult from "./TrackSearchResult";
@@ -93,12 +93,18 @@ export default function Dashboard({ code, theme }) {
     >
       {/* Search box */}
       <div className="py-2">
-        <Form.Control
-          type="search"
-          placeholder="Search Songs/Artists"
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-        />
+        <form
+          className="bg-opacity-40 rounded-md shadow-md"
+          style={{ backgroundColor: theme.secondaryColor }}
+        >
+          <input
+            type="search"
+            placeholder="Search Songs/Artists"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            className="border focus:outline-none py-2 px-4 block w-full rounded-md leading-5  sm:text-sm bg-transparent h-12"
+          />
+        </form>
       </div>
       {/* Part where the songs appear under search */}
       <div
