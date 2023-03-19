@@ -18,7 +18,7 @@ export default function Sidenav({ theme, handleThemeChange }) {
       <div
         className="overflow-y-auto py-5 px-3 h-full overflow-x-hidden"
         style={{
-          backgroundColor: theme.warningColor,
+          backgroundColor: theme.SidenavBackgroundColor,
         }}
       >
         {/* <div className="text-white cursor-pointer" onClick={toggleCollapse}>

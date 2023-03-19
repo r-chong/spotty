@@ -92,7 +92,7 @@ export default function Dashboard({ code, theme }) {
       style={{ height: "100vh" }}
     >
       {/* Search box */}
-      <div className="py-2">
+      <div className="pt-2">
         <form
           className="bg-opacity-40 rounded-md shadow-md"
           style={{ backgroundColor: theme.secondaryColor }}
@@ -108,8 +108,12 @@ export default function Dashboard({ code, theme }) {
       </div>
       {/* Part where the songs appear under search */}
       <div
-        className="flex flex-col py-2"
-        style={{ overflowY: "auto", flexGrow: 1 }}
+        className="flex flex-col py-2 bg-opacity-80"
+        style={{
+          overflowY: "auto",
+          flexGrow: 1,
+          // backgroundColor: theme.secondaryColor,
+        }}
       >
         {searchResults.map((track) => (
           <TrackSearchResult
