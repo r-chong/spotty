@@ -4,6 +4,7 @@ export const themes = {
       playButtonColor: "17a2b8",
       secondaryColor: "#e9ecef",
       accentColor: "#ffc107",
+      warningColor: "#000000",
       textColor: "#1C1C1E",
       backgroundGradient: "linear-gradient(to right, #f8f9fa, #edeff2)",
     },

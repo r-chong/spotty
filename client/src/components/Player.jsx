@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
 import SpotifyPlayer from "react-spotify-web-playback";
+import { themes } from "../theme";
 
 export default function Player({ accessToken, trackUri, theme }) {
   const [play, setPlay] = useState(false);
   const [key, setKey] = useState(0);
+
   // let bgColor, textColor, iconColor;
 
   // switch (theme) {
@@ -58,7 +60,7 @@ export default function Player({ accessToken, trackUri, theme }) {
       styles={{
         bgColor: theme.primaryColor,
         color: theme.playButtonColor,
-        loaderColor: theme.accentColor,
+        loaderColor: theme.warningColor,
         sliderColor: theme.accentColor,
         // active is heart icon
         activeColor: theme.accentColor,

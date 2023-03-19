@@ -7,8 +7,8 @@ export default function ThemeChanger({ setTheme }) {
 
   return (
     <div className="py-4 px-8 flex flex-col items-center">
-      <p className="mb-2 text-lg font-semibold">Theme Changer</p>
-      <div className="flex justify-center items-center gap-4">
+      <p className="mb-2 text-white font-semibold">Theme Changer</p>
+      <div className="flex flex-col justify-center items-center gap-4">
         <button
           className="px-4 py-2 rounded-md bg-white text-gray-800 shadow-md hover:bg-gray-200 focus:outline-none"
           onClick={() => setTheme(themes.light)}
