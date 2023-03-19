@@ -5,7 +5,7 @@ export const themes = {
       accentColor: "#007bff",
       warningColor: "#ffc107",
       textColor: "#343a40",
-      backgroundGradient: "linear-gradient(to right, #fdcbf1, #e6dee9)",
+      backgroundGradient: "linear-gradient(to right, #f8f9fa, #edeff2)",
     },
     dark: {
       primaryColor: "#343a40",
