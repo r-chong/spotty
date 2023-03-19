@@ -87,7 +87,10 @@ export default function Dashboard({ code, theme }) {
   }, [search, accessToken]);
 
   return (
-    <Container className="flex flex-col w-screen" style={{ height: "100vh" }}>
+    <Container
+      className="flex flex-grow flex-col w-screen cursor-pointer"
+      style={{ height: "100vh" }}
+    >
       {/* Search box */}
       <div className="py-2">
         <Form.Control
