@@ -1,7 +1,7 @@
 export const themes = {
     light: {
       primaryColor: "#f8f9fa",
-      playButtonColor: "17a2b8",
+      playButtonColor: "#17a2b8",
       secondaryColor: "#e9ecef",
       accentColor: "#ffc107",
       warningColor: "#000000",
