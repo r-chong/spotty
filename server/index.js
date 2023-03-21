@@ -1,9 +1,11 @@
 require("dotenv").config()
+const path = require('path');
 const express = require("express")
 const cors = require("cors")
 const bodyParser = require("body-parser")
 const lyricsFinder = require("lyrics-finder")
 const SpotifyWebApi = require("spotify-web-api-node")
+const port = process.env.PORT || 4000;
 
 const app = express()
 app.use(cors())
@@ -11,6 +13,10 @@ app.use(cors())
 // middleware to read body, parse it and place results in req.body
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
+
+// deta??
+app.listen(port, '0.0.0.0');
+app.use(express.static(path.resolve(__dirname, './build')));
 
 app.use("/refresh", (req, res) => {
   console.log("refresh endpoint hit")
@@ -65,4 +71,9 @@ app.get("/lyrics", async (req, res) => {
   res.json({ lyrics })
 })
 
-app.listen(8888)
+app.get('/*', async (req, res) => {
+  res.sendFile(path.resolve(dirname, './build', 'index.html'));
+});
+app.get('/favicon.ico', async (req, res) => {
+  res.sendFile(path.resolve(dirname, './build', 'favicon.ico'));
+});
