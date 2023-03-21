@@ -38,7 +38,7 @@ export default function Dashboard({ code, theme }) {
     if (!playingTrack) return;
 
     axios
-      .get("http://localhost:8888/lyrics", {
+      .get("/lyrics", {
         params: {
           track: playingTrack.title,
           artist: playingTrack.artist,
