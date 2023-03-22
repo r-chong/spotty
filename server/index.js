@@ -5,7 +5,7 @@ const cors = require("cors")
 const bodyParser = require("body-parser")
 const lyricsFinder = require("lyrics-finder")
 const SpotifyWebApi = require("spotify-web-api-node")
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 8080;
 
 const app = express()
 app.use(cors())
@@ -71,8 +71,8 @@ app.get("/lyrics", async (req, res) => {
 })
 
 app.get('/*', async (req, res) => {
-  res.sendFile(path.resolve(dirname, './build', 'index.html'));
+  res.sendFile(path.resolve(__dirname, './build', 'index.html'));
 });
 app.get('/favicon.ico', async (req, res) => {
-  res.sendFile(path.resolve(dirname, './build', 'favicon.ico'));
+  res.sendFile(path.resolve(__dirname, './build', 'favicon.ico'));
 });

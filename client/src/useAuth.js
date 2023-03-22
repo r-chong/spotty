@@ -7,17 +7,30 @@ export default function useAuth(code) {
   const [expiresIn, setExpiresIn] = useState()
 
   useEffect(() => {
-    axios
-      .post(`${process.env.REACT_APP_API_URL}/login`, {
-        code,
+    fetch(`${process.env.REACT_APP_API_URL}/login`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        code
       })
+    })
       .then(res => {
-        setAccessToken(res.data.accessToken)
-        setRefreshToken(res.data.refreshToken)
-        setExpiresIn(res.data.expiresIn)
+        if (!res.ok) {
+          throw new Error(res.statusText);
+        }
+        return res.json();
+      })
+      .then(data => {
+        console.log(data)
+        setAccessToken(data.accessToken)
+        setRefreshToken(data.refreshToken)
+        setExpiresIn(data.expiresIn)
         window.history.pushState({}, null, "/")
       })
-      .catch(() => {
+      .catch((e) => {
+        console.log(e)
         // deprecated - app should no longer redirect
         // window.location = "/"
       })
@@ -27,13 +40,24 @@ export default function useAuth(code) {
     if (!refreshToken || !expiresIn) return
     const interval = setInterval(() => {
       // console.log("setInterval is running")
-      axios
-        .post(`${process.env.REACT_APP_API_URL}/refresh`, {
-          refreshToken,
+      fetch(`${process.env.REACT_APP_API_URL}/refresh`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          refreshToken
         })
+      })
         .then(res => {
-          setAccessToken(res.data.accessToken)
-          setExpiresIn(res.data.expiresIn)
+          if (!res.ok) {
+            throw new Error(res.statusText);
+          }
+          return res.json();
+        })
+        .then(data => {
+          setAccessToken(data.accessToken)
+          setExpiresIn(data.expiresIn)
         })
         .catch(() => {
           window.location = "/"

@@ -61,8 +61,11 @@ export default function Dashboard({ code, theme }) {
     // make request, if new request made, then stop
     // to prevent lots of requests when typing
     let cancel = false;
+    console.log("right before searching tracks");
     spotifyApi.searchTracks(search).then((res) => {
+      console.log("able to search tracks");
       if (cancel) return;
+      console.log("does not cancel");
       setSearchResults(
         res.body.tracks.items.map((track) => {
           const smallestAlbumImage = track.album.images.reduce(
