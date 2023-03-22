@@ -8,7 +8,7 @@ export default function useAuth(code) {
 
   useEffect(() => {
     axios
-      .post("/login", {
+      .post(`${process.env.REACT_APP_API_URL}/login`, {
         code,
       })
       .then(res => {
@@ -28,7 +28,7 @@ export default function useAuth(code) {
     const interval = setInterval(() => {
       // console.log("setInterval is running")
       axios
-        .post("/refresh", {
+        .post(`${process.env.REACT_APP_API_URL}/refresh`, {
           refreshToken,
         })
         .then(res => {

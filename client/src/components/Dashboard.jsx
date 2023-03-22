@@ -32,13 +32,13 @@ export default function Dashboard({ code, theme }) {
   // censorship options, for if user requests to not see profanity
   const myCensorOptions = { censorText: "▇" };
   const myCensor = new GoodCensor(badwordsArray);
-  const censorEnabled = false;
+  const censorEnabled = true;
 
   useEffect(() => {
     if (!playingTrack) return;
 
     axios
-      .get("/lyrics", {
+      .get(`${process.env.REACT_APP_API_URL}/lyrics`, {
         params: {
           track: playingTrack.title,
           artist: playingTrack.artist,
