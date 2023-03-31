@@ -17,6 +17,8 @@ My goal with Spotty was to create a web player that offers all the core function
 
 Another important goal for me was to make Spotty accessible to as many people as possible. That's why I made sure to design the player with a clean and minimalistic user interface that is easy to use even for those who are not tech-savvy.
 
+
+![Spotty_dark_ss](https://user-images.githubusercontent.com/75395781/229042437-5c028cd3-38fb-4725-b162-f74ed46ceab0.png)
 # Features
 - Login with your Spotify account
 - Browse and search for songs, albums, artists, and playlists
