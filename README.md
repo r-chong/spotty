@@ -20,28 +20,32 @@ Another important goal for me was to make Spotty accessible to as many people as
 
 ![Spotty_dark_ss](https://user-images.githubusercontent.com/75395781/229042437-5c028cd3-38fb-4725-b162-f74ed46ceab0.png)
 # Features
-- Login with your Spotify account
-- Browse and search for songs, albums, artists, and playlists
-- Create and manage your own playlists
+- Secure login with your Spotify account
+- Browse and search for songs, albums and artists
+- Switch between themes (Dark, Light, City Lights, and Spotify Green)
 - Stream songs, albums, and playlists with the Spotify playback SDK
-- View song lyrics with the Musixmatch API
+- View song lyrics
+- Censor profanity in song lyrics
 
 # Technologies
 To build Spotty, I used a range of modern web technologies, including:
 - React
 - Node.js
 - Express
-- Spotify Web API
+- Spotify Premium API
 - Spotify Playback SDK
-- Musixmatch API
+- Google Lyrics API
 
 # Installation
 To install Spotty, you will need to clone the repository to your local machine and install the necessary dependencies. Here are the steps:
-Clone the repository: git clone https://github.com/your-username/spotty.git
-Navigate to the project directory: cd spotty
-Install dependencies: npm install
-Create a .env file with your Spotify API credentials:
 
+Clone the repository: git clone https://github.com/r-chong/spotty.git
+
+Navigate to the project directory: `cd spotty`
+
+Install dependencies: `npm install`
+
+Create a .env file with your Spotify API credentials:
 ```
 CLIENT_ID=your-client-id
 CLIENT_SECRET=your-client-secret
