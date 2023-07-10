@@ -3,8 +3,6 @@ Spotify web player using latest technologies, including React, Node, Express, an
 
 ![SpottyRecording1](https://user-images.githubusercontent.com/75395781/229039715-e6db7031-9501-453c-993b-e2e68437a81b.gif)
 
-# DEMO LINK COMING SOON
-
 Spotty is a web player for Spotify built using the latest technologies, including React, Node, Express, and the Spotify playback SDK. With Spotty, you can stream your favorite music from Spotify right in your browser.
 
 # Inspiration
